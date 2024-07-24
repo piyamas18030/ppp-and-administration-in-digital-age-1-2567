@@ -131,18 +131,8 @@ export default function Footer() {
                   ยุทธศาสตร์ชาติ20
                 </a>{" "}
               </p>
-              <p>
-                {" "}
-                <a className="text-gray-500/80 hover:text-cyan-600" href="#">
-                  Service Providers
-                </a>{" "}
-              </p>
-              <p>
-                {" "}
-                <a className="text-gray-500/80 hover:text-cyan-600" href="#">
-                  Email Contact
-                </a>{" "}
-              </p>
+             
+              
             </div>
             <div className="flex flex-col my-6 leading-7 md:my-0">
               <h1 className="text-blue-500 text-lg font-semibold">
