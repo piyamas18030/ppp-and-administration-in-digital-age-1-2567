@@ -8,11 +8,36 @@ export async function GET() {
   const products = await Product.find();
   return NextResponse.json({ products });
 }
-
 export async function POST(request) {
-  const { name, image, price, category } = await request.json();
+  const {
+    name,
+    project,
+    implementation,
+    email,
+    mobile,
+    budget,
+    year,
+    evaluation,
+    weak,
+    strength,
+    deverlopment,
+    suggestion,
+  } = await request.json();
   await connectMongoDB();
-  await Product.create({ name, image, price, category });
+  await Product.create({
+    name,
+    project,
+    implementation,
+    email,
+    mobile,
+    budget,
+    year,
+    evaluation,
+    weak,
+    strength,
+    deverlopment,
+    suggestion,
+  });
   return NextResponse.json({ message: "Product Created" }, { status: 201 });
 }
 
