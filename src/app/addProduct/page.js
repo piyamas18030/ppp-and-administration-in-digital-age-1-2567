@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 export default function AddProduct() {
   const [name, setName] = useState("");
-  const [ project, setProject] = useState("");
+  const [project, setProject] = useState("");
   const [implementation, setImplementation] = useState("");
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
@@ -34,7 +34,20 @@ export default function AddProduct() {
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ name, image, price, category }),
+        body: JSON.stringify({
+          name,
+          project,
+          implementation,
+          email,
+          mobile,
+          budget,
+          year,
+          evaluation,
+          weak,
+          strength,
+          deverlopment,
+          suggestion,
+        }),
       });
 
       if (res.ok) {
@@ -82,7 +95,7 @@ export default function AddProduct() {
             <div className="mt-2">
               <input
                 onChange={(e) => setProject(e.target.value)}
-                value={ project}
+                value={project}
                 className="input input-bordered input-accent w-full max-w-xs"
                 type="text"
                 placeholder="/images/1.jpg"
@@ -104,7 +117,6 @@ export default function AddProduct() {
                 className="input input-bordered input-accent w-full max-w-xs"
                 type="text"
                 placeholder="หน่วยงานที่นำนโยบายไปปฏิบัติ"
-                
               />
             </div>
           </div>
@@ -186,7 +198,7 @@ export default function AddProduct() {
             <div className="mt-2">
               <input
                 onChange={(e) => setEvaluation(e.target.value)}
-                value={ evaluation}
+                value={evaluation}
                 className="input input-bordered input-accent w-full max-w-xs"
                 type="float"
                 placeholder=" ผลประเมิน"
@@ -254,7 +266,7 @@ export default function AddProduct() {
             <div className="mt-2">
               <input
                 onChange={(e) => setSuggestion(e.target.value)}
-                value={ suggestion}
+                value={suggestion}
                 className="input input-bordered input-accent w-full max-w-xs"
                 type="text"
                 placeholder="ข้อเสนอแนะ"
